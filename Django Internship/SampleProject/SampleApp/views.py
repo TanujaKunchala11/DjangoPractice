@@ -26,3 +26,5 @@ def external(request):
     return render(request,'external.html')
 def boot(request):
 	return render(request,'boot.html')
+def btp(request):
+    return render(request,'bt/home.html')

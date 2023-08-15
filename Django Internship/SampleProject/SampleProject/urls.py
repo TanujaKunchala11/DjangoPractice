@@ -29,4 +29,5 @@ urlpatterns = [
     path('details/<int:id>/<str:name>/',views.details,name="details"),
     path('external/',views.external,name="External"),
     path('boot/',views.boot,name="boot"),
+    path('home/',views.btp,name="home"),
 ]
