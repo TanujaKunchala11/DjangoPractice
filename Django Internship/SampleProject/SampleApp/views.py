@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http import HttpResponse
+from .models import EmployeeData
 # Create your views here.
 def Hello(request):
     return HttpResponse("<h1 align='center'>Hello World</h1>")
@@ -28,3 +29,31 @@ def boot(request):
 	return render(request,'boot.html')
 def btp(request):
     return render(request,'bt/home.html')
+def crud(request):
+    p = EmployeeData.objects.all()
+    if request.method == "POST":
+        a = request.POST['ei']
+        b = request.POST['en']
+        c = request.POST['ed']
+        d = request.POST['ea']
+        t = EmployeeData(eid=a,ename=b,edesg=c,eage=d)
+        t.save()
+        return redirect('/')
+    return render(request,'bt/crudoperations.html',{'z':p})
+def emupdate(request,r):
+	m = EmployeeData.objects.get(id=r)
+	if request.method == "POST":
+		m.eid = request.POST['ei']
+		m.ename = request.POST['en']
+		m.edesg = request.POST['ed']
+		m.eage = request.POST['ea']
+		m.save()
+		return redirect('/')
+	return render(request,'bt/emupdate.html',{'n':m})
+
+def emdel(request,y):
+	k = EmployeeData.objects.get(id=y)
+	if request.method == "POST":
+		k.delete()
+		return redirect('/')
+	return render(request,'bt/emdel.html',{'s':k})

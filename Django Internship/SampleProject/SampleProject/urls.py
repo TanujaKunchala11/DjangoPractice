@@ -30,4 +30,7 @@ urlpatterns = [
     path('external/',views.external,name="External"),
     path('boot/',views.boot,name="boot"),
     path('home/',views.btp,name="home"),
+    path('',views.crud,name="crud"),
+    path('eup/<int:r>/',views.emupdate,name="eupd"),
+    path('edt/<int:y>/',views.emdel,name="edte"),
 ]
