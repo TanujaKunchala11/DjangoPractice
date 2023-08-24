@@ -1,17 +1,17 @@
-{%load static%}
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/external.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/sample.css' %}">
 
-	<script type="text/javascript" src="{% static 'js/Sample.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/sample.js' %}"></script>
 
 	<style type="text/css">
 		body{
-			background-image: url("{% static 'images/card10.jpeg' %}");
+			background-image: url("{% static 'images/card10.jpg' %}");
 			background-repeat: no-repeat;
 			background-size: cover;
 		}
@@ -30,6 +30,6 @@
 		<button>Register</button>
 
 	</form>
-	<img src="{% static 'images/card2.jpeg' %}">
+	<img src="{% static 'images/card2.png' %}">
 </body>
 </html>

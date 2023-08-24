@@ -20,17 +20,30 @@ from SampleApp import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('Hello/',views.Hello,name="Hello"),
-    path('Sample/',views.Sample,name="Sample"),
-    path('dyn/<int:id>/',views.dyn,name="dynamicreading"),
-    path('data/<str:name>/',views.name,name="Tanuja"),
-    path('task/<int:id>/<str:name>/',views.task,name="task"),
-    path('table/',views.table,name="table"),
-    path('details/<int:id>/<str:name>/',views.details,name="details"),
-    path('external/',views.external,name="External"),
-    path('boot/',views.boot,name="boot"),
-    path('home/',views.btp,name="home"),
-    path('',views.crud,name="crud"),
+    path('hello/',views.hello,name='hel'),
+    path('sample/',views.sam),
+
+    path('dyn/<int:id>/',views.dynamic,name='dyn'),
+    path('data/<str:name>/',views.data),
+    path('task/<int:a>/<str:b>/',views.task,name='task'),
+
+    path('table/',views.table,name='table'),
+    path('details/<int:id>/<str:name>/',views.det,name='details'),
+
+    path('external/',views.external,name='external'),
+
+    path('boot/',views.boot,name='boot'),
+
+    # Offline bootstrap Procedure
+    path('home/',views.btp,name='hm'),
+    path('cr/',views.crud,name="crd"),
     path('eup/<int:r>/',views.emupdate,name="eupd"),
     path('edt/<int:y>/',views.emdel,name="edte"),
+
+    # forms
+    path('typ/',views.crd,name="cr"),
+    path('ep/<int:w>/',views.epdt,name="epd"),
+
+    # mail
+    path('',views.cntm,name="mail"),
 ]
